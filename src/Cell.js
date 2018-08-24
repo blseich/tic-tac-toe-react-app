@@ -6,19 +6,15 @@ class Cell extends React.Component {
         super(props)
         this.state = { mark: ""}
 
-        // this.markIt = this.markIt.bind(this)
+        this.markIt = this.markIt.bind(this)
     }
 
     render() {
-        return <div className="cell" onClick = {this.markIt}>{this.state.mark}</div>
+        return <button className="cell" onClick = {this.markIt}>{this.state.mark}</button>
     }
 
-    // markIt() {
-    //     this.setState({ mark: "X"})
-    // }
-
-    markIt = () => {
-        this.setState({ mark: "X"})
+    markIt() {
+        this.setState({ mark: this.props.player})
     }
 }
 
