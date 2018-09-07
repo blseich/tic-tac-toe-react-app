@@ -21,5 +21,4 @@ describe('Board', () => {
         expect(allRows.at(2).find(Cell).length).to.be.equal(3)
     })
 
-
 })

@@ -5,8 +5,8 @@ class Cell extends React.Component {
     constructor(props) {
         super(props)
         this.state = { mark: ""}
-
         this.markIt = this.markIt.bind(this)
+
     }
 
     render() {
@@ -14,7 +14,10 @@ class Cell extends React.Component {
     }
 
     markIt() {
-        this.setState({ mark: this.props.player})
+        if(!this.state.mark){
+            this.props.callback()
+            this.setState({ mark: this.props.player})
+        }
     }
 }
 
